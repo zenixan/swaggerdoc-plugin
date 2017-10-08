@@ -1,0 +1,32 @@
+<plugin
+    xmlns="http://maven.apache.org/PLUGIN/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/PLUGIN/1.0.0 http://maven.apache.org/xsd/plugin-1.0.0.xsd">
+
+    <groupId>${organization}</groupId>
+    <artifactId>${normalizedName}</artifactId>
+    <version>${version}</version>
+    <description>${description}</description>
+
+    <mojos>
+        <mojo>
+            <goal>generate</goal>
+            <implementation>org.eu.fuzzy.MavenPlugin</implementation>
+            <language>java</language>
+
+            <requiresProject>true</requiresProject>
+            <requiresReports>false</requiresReports>
+            <requiresDirectInvocation>false</requiresDirectInvocation>
+            <requiresOnline>false</requiresOnline>
+            <aggregator>false</aggregator>
+
+            <instantiationStrategy>per-lookup</instantiationStrategy>
+            <executionStrategy>once-per-session</executionStrategy>
+            <threadSafe>true</threadSafe>
+
+            <inheritedByDefault>true</inheritedByDefault>
+            <parameters/>
+        </mojo>
+    </mojos>
+
+</plugin>
