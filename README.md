@@ -20,7 +20,18 @@ Add the following plugin configuration to the `plugins` block in the POM:
             <artifactId>swaggerdoc-plugin</artifactId>
             <version>0.1.0</version>
         </docletArtifact>
-        <useStandardDocletOptions>false</useStandardDocletOptions>
+        <useStandardDocletOptions>true</useStandardDocletOptions>
+        <doctitle>Test API</doctitle>
+        <additionalparam>
+            --api-version 1.0.0
+            --api-description "${project.description}"
+            --api-tos MIT
+            --api-contact-name "Yevhen Vatulin"
+            --api-contact-url "http://vatulin.me"
+            --api-contact-email yevhen@vatulin.me
+            --api-license MIT
+            --api-license-url "https://spdx.org/licenses/MIT.html"
+        </additionalparam>
     </configuration>
 </plugin>
 ```

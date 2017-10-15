@@ -8,9 +8,9 @@ import java.net.URL
  * @param name  A name of license for the exposed API.
  * @param url   An URL address of license.
  *
- * @see [[https://swagger.io/specification/#licenseObject License Object]]
+ * @see [[https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#licenseObject License Object]]
  */
 case class License(
     name: String,
-    url: Option[URL]
+    url: Option[URL] = None
 )

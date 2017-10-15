@@ -1,5 +1,6 @@
 package org.eu.fuzzy.json.serialization
 
+import java.net.{URI, URL}
 import java.util.regex.Pattern
 
 import org.json4s.{JValue, JsonDSL}
@@ -94,6 +95,9 @@ private class JsonWriterMacro(val c: Context) {
         q"org.json4s.JString($objectName)"
       else
         q"org.json4s.JString(x.getClass().getSimpleName())"
+    }
+    else if (classType =:= typeOf[URL] || classType =:= typeOf[URI]) {
+      q"org.json4s.JString(x.toString())"
     }
     else {
       q"org.json4s.JObject(..$jsonFields)"

@@ -6,26 +6,31 @@ import scala.reflect.runtime.universe._
 /**
  * Represents a set of plugin options to generate a Swagger document.
  *
+ * @param destination A destination directory where the generated Swagger file will be saved
  * @param title [[org.eu.fuzzy.swagger.model.Info.title]]
  * @param description [[org.eu.fuzzy.swagger.model.Info.description]]
  * @param version [[org.eu.fuzzy.swagger.model.Info.version]]
- * @param tos [[org.eu.fuzzy.swagger.model.Info.termsOfService]],
+ * @param termsOfService [[org.eu.fuzzy.swagger.model.Info.termsOfService]],
  * @param contactName [[org.eu.fuzzy.swagger.model.Contact.name]]
  * @param contactUrl [[org.eu.fuzzy.swagger.model.Contact.url]]
  * @param contactEmail [[org.eu.fuzzy.swagger.model.Contact.email]]
  * @param licenseName [[org.eu.fuzzy.swagger.model.License.name]]
  * @param licenseUrl [[org.eu.fuzzy.swagger.model.License.url]]
+ * @param host [[org.eu.fuzzy.swagger.model.Swagger.host]]
+ * @param basePath [[org.eu.fuzzy.swagger.model.Swagger.basePath]]
  */
 case class PluginOptions(
-    @OptionName("--api-title")
+    @OptionName("-d")
+    destination: String,
+    @OptionName("-doctitle")
     title: String,
     @OptionName("--api-description")
     description: String,
-    @OptionName("-version")
+    @OptionName("--api-version")
     version: String,
     @OptionName("--api-tos")
-    tos: String,
-    @OptionName("-author")
+    termsOfService: String,
+    @OptionName("--api-contact-name")
     contactName: String,
     @OptionName("--api-contact-url")
     contactUrl: String,
@@ -34,7 +39,11 @@ case class PluginOptions(
     @OptionName("--api-license")
     licenseName: String,
     @OptionName("--api-license-url")
-    licenseUrl: String
+    licenseUrl: String,
+    @OptionName("--api-host")
+    host: String,
+    @OptionName("--api-base-path")
+    basePath: String
 )
 
 /**

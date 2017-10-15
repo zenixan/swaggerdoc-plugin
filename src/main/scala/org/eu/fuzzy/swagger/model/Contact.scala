@@ -9,10 +9,10 @@ import java.net.URL
  * @param url   An URL address of page with contact information.
  * @param email  An email address of the contact person/organization.
  *
- * @see [[https://swagger.io/specification/#contactObject Contact Object]]
+ * @see [[https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#contactObject Contact Object]]
  */
 case class Contact(
-    name: Option[String],
-    url: Option[URL],
-    email: Option[String]
+    name: Option[String] = None,
+    url: Option[URL] = None,
+    email: Option[String] = None
 )

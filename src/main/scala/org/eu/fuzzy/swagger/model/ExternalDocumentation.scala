@@ -8,9 +8,9 @@ import java.net.URL
  * @param description   A short description of the target documentation.
  * @param url   An URL address for the target documentation.
  *
- * @see [[https://swagger.io/specification/#externalDocumentationObject External Documentation Object]]
+ * @see [[https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#externalDocumentationObject External Documentation Object]]
  */
 case class ExternalDocumentation(
-    description: Option[String],
+    description: Option[String] = None,
     url: URL
 )
